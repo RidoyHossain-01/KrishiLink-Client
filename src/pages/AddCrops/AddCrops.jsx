@@ -56,7 +56,7 @@ useEffect(()=>{
   };
 
   return (
-    <div className="min-h-screen bg-base-200 flex justify-center py-10 px-4">
+    <div className="min-h-screen md:min-h-56 bg-base-200 flex justify-center py-10 px-4">
       <div className="w-full max-w-2xl card bg-base-100 shadow-xl p-6">
         <h2 className="text-2xl font-bold mb-6 text-center">
           Create New Crop Post
