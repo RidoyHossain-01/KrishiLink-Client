@@ -45,7 +45,7 @@ useEffect(()=>{
           if(res.data.acknowledged){
                toast.success('Crop added successfully')
                form.reset()
-               navigate('/')  
+               navigate('/my-posts')  
           }
      })
      .catch(err=>{

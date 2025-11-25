@@ -27,7 +27,9 @@ export const router = createBrowserRouter([
                },
                {
                     path:'/all-crops/:id',
-                    Component:CropDetails
+                   element:<PrivateRoute>
+                    <CropDetails/>
+                   </PrivateRoute>
                },
                {
                     path:'/profile',

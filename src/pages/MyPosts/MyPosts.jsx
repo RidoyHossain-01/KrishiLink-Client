@@ -5,11 +5,11 @@ import CropRow from '../../components/CropRow';
 
 const MyPosts = () => {
      const {user} = use(AuthContext);
-     console.log(user);
+     // console.log(user);
 
      const [myposts, setMyposts]=useState([])
 
-     console.log(myposts);
+     // console.log(myposts);
      
      
      
