@@ -174,7 +174,25 @@ const CropDetails = () => {
 
   return (
     <div>
-      {/* this one is for the users */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* this one is for the owner */}
       {checkOwner && (
        <>
   <h1 className="text-2xl font-bold mb-4 text-center">Interests for Your Product</h1>
@@ -262,10 +280,10 @@ const CropDetails = () => {
 
       {checkOwner || (
         <>
-          <div>
+          <div className="flex justify-center ">
             <button
               onClick={handleInterestModalOpen}
-              className="btn btn-primary"
+              className="btn btn-primary "
             >
               Interest request
             </button>

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import AuthContext from "../../context/AuthContext";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -148,6 +148,12 @@ createUser(email, password)
               Register
             </button>
           </form>
+          <p className="text-center text-sm mt-3">
+            Already have an account?{" "}
+            <Link to={"/login"} className="text-primary font-semibold">
+              Log in
+            </Link>
+          </p>
         </div>
       </div>
     </div>

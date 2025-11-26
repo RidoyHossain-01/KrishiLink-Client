@@ -135,12 +135,12 @@ const CropRow = ({ crop }) => {
         <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-end">
           <button
             onClick={handleCropModalOpen}
-            className="btn btn-sm btn-primary"
+            className="btn btn-sm bg-primary text-base"
           >
             Edit
           </button>
 
-          <button onClick={handleCropDelete} className="btn btn-sm btn-error">Delete</button>
+          <button onClick={handleCropDelete} className="btn btn-sm bg-red-500 text-base">Delete</button>
         </div>
       </div>
 
@@ -150,7 +150,7 @@ const CropRow = ({ crop }) => {
         <div className="modal-box">
           <div className="w-full max-w-2xl card bg-base-100 shadow-xl p-6">
             <h2 className="text-2xl font-bold mb-6 text-center">
-              Create New Crop Post
+              Edit Your Post
             </h2>
 
             <form

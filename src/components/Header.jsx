@@ -40,7 +40,7 @@ const Header = () => {
   return (
     //navbar component
     <div>
-      <div className="navbar py-0 min-h-0 z-1 shadow-sm  glass-card max-w-7xl mx-auto">
+      <div className="navbar py-0 min-h-0 z-1 shadow-sm  glass-card max-w-7xl mx-auto bg-secondary">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,11 +70,11 @@ const Header = () => {
           <a className="  font-bold text-2xl">KrishiLink</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal px-1 text-base">{links}</ul>
         </div>
         <div className="navbar-end">
           {!user ? (
-            <button className="btn btn-outline ">
+            <button className="btn btn-primary ">
               <NavLink to="/login">Log in</NavLink>
             </button>
           ) : (
@@ -82,7 +82,7 @@ const Header = () => {
               onClick={() =>
                 signOutUser().then(toast.success("Signed Out Successfully"))
               }
-              className="btn btn-outline "
+              className="btn btn-primary "
             >
               Log out
             </button>

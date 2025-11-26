@@ -1,3 +1,19 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@theme {
+  --color-primary: #10b981;
+  --color-secondary: #fb923c;
+  --color-accent: #d1fae5;
+  --color-base: #f8fafc;
+}
+
+
+.nunito-original {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 

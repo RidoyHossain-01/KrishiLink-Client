@@ -33,7 +33,9 @@ export const router = createBrowserRouter([
                },
                {
                     path:'/profile',
-                    Component:MyProfile
+                    element:<PrivateRoute>
+                         <MyProfile/>
+                    </PrivateRoute>
                },
                {
                     path:'/add-crops',

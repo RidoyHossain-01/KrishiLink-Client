@@ -25,7 +25,7 @@ const CorpCard = ({crop}) => {
 
       {/* Content */}
       <div className="card-body">
-        <h2 className="card-title text-lg font-bold">{name}</h2>
+        <h2 className="card-title text-xl font-bold">{name}</h2>
 
         <p className="text-sm text-gray-600">{description}</p>
 
