@@ -23,14 +23,14 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="w-full h-1/2 relative nunito-original">
+    <div className="w-full h-lvh md:h-1/2 relative nunito-original">
       <Slider {...settings}>
         {images.map((img, idx) => (
           <div key={idx}>
             <img
               src={img.src}
               alt={img.alt}
-              className="w-full h-1/2 object-cover"
+              className="w-full h-lvh md:h-1/2 object-cover"
             />
           </div>
         ))}
@@ -38,8 +38,8 @@ const HeroSlider = () => {
 
       {/* Optionally overlay text */}
       <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 text-center text-white px-4">
-        <h1 className="text-3xl md:text-8xl  font-bold drop-shadow-lg  ">Welcome to KrishiLink</h1>
-        <p className="mt-2 text-lg md:text-2xl drop-shadow-md">Connecting farmers and buyers...</p>
+        <h1 className="text-5xl md:text-8xl  font-bold drop-shadow-lg  ">Welcome to KrishiLink</h1>
+        <p className="mt-2 text-xl md:text-3xl drop-shadow-md">Connecting farmers and buyers...</p>
       </div>
     </div>
   );

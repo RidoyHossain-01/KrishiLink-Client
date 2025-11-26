@@ -70,7 +70,7 @@ const Header = () => {
           <a className="  font-bold text-2xl">KrishiLink</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-base">{links}</ul>
+          <ul className="flex gap-5 px-1 text-base">{links}</ul>
         </div>
         <div className="navbar-end">
           {!user ? (
