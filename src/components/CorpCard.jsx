@@ -37,7 +37,7 @@ const CorpCard = ({crop}) => {
 
         <div className="card-actions mt-4">
           
-            <Link className='btn w-full btn-primary' to={`/all-crops/${_id}`}>See Details</Link>
+            <Link className='btn w-full btn-success' to={`/all-crops/${_id}`}>See Details</Link>
           
         </div>
       </div>

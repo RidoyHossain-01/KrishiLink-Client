@@ -20,7 +20,7 @@ const CropDetails = () => {
   //   const [pending,setPending] = useState(true)
   //   console.log(interests);
 
-    console.log(cropDetails);
+    // console.log(cropDetails);
 
   const {image,name,type, pricePerUnit,unit,quantity,description,location,owner } = cropDetails;
   
@@ -232,8 +232,8 @@ const CropDetails = () => {
               Seller Information
             </h2>
 
-            <p className="text-gray-700 font-medium">{owner.ownerName}</p>
-            <p className="text-gray-600 text-sm">{owner.ownerEmail}</p>
+            <p className="text-gray-700 font-medium">{owner?.ownerName}</p>
+            <p className="text-gray-600 text-sm">{owner?.ownerEmail}</p>
           </div>
 
           {/* CTA Buttons */}

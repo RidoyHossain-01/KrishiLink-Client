@@ -15,12 +15,12 @@ const MainLayout = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col min-h-screen">
         <Header/>
-        <div className="mt-4">
+        <div className="mt-4 flex-1">
           <Outlet />
         </div>
-        {/* <Footer/> */}
+        <Footer/>
       </div>
 
       <Toaster/>
