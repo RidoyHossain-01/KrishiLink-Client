@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import AuthContext from "../context/AuthContext";
 import toast from "react-hot-toast";
 
@@ -39,8 +39,8 @@ const Header = () => {
   );
   return (
     //navbar component
-    <div className="sticky top-0 z-10">
-      <div className="navbar py-0 min-h-0 lg:bg-secondary shadow-sm  backdrop-blur-2xl max-w-7xl mx-auto  ">
+    <div className="sticky top-0 z-10 text-white">
+      <div className="navbar py-0 min-h-0 lg:bg-green-600 shadow-sm  backdrop-blur-2xl max-w-7xl mx-auto  ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -67,22 +67,22 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <a className="  font-bold text-3xl text-primary">KrishiLink</a>
+          <Link to={'/'} className="  font-bold text-3xl text-white">KrishiLink</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="flex gap-5 px-1 text-base text-lg">{links}</ul>
+          <ul className="flex items-center gap-5 px-1 text-base text-lg">{links}</ul>
         </div>
         <div className="navbar-end">
           {!user ? (
-            <button className="btn btn-sm my-1 btn-primary ">
-              <NavLink to="/login">Log in</NavLink>
+            <button className="btn btn-sm my-1 bg-orange-500  outline-0 ">
+              <Link className='text-white' to="/login">Log in</Link>
             </button>
           ) : (
             <button
               onClick={() =>
                 signOutUser().then(toast.success("Signed Out Successfully"))
               }
-              className="btn my-1 btn-sm btn-primary "
+              className="btn my-1 btn-sm text-white bg-orange-500 outline-0 "
             >
               Log out
             </button>

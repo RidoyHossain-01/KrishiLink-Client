@@ -40,11 +40,11 @@ const handleSearch=(e)=>{
 
      return (
       <div data-aos="fade-up">
-        <div className='text-center '>
-          <h1 className='text-5xl text-primary'>
+        <div className='text-center my-6'>
+          <h1 className='text-5xl text-green-700'>
             Explore All Available Crops
           </h1>
-          <p className='text-xl mt-3 mb-8 text-secondary'>
+          <p className='text-xl mt-3 mb-8 text-orange-500'>
             Find fresh, authentic, and locally grown crops posted by trusted farmers and sellers.
           </p>
         </div>
@@ -96,7 +96,7 @@ const handleSearch=(e)=>{
               }
           </div>
 
-          <Link className='btn btn-primary flex justify-center' onClick={()=>{
+          <Link className='btn bg-purple-500 text-white text-lg flex justify-center' onClick={()=>{
             navigate(0)
           }}>View all Available Crops</Link>
       </div>

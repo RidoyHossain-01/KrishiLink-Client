@@ -40,12 +40,12 @@ const MyInterests = () => {
 
 
         <div>
-          <h1 className="text-4xl text-center font-bold text-primary">My Interests</h1>
+          <h1 className="text-4xl text-center font-bold text-green-700 border-b-2">My Interests</h1>
         </div>
 
       {/* sorting  */}
 
-       <div className="dropdown dropdown-end">
+       <div className="dropdown dropdown-end flex justify-end">
       <label tabIndex={0} className="btn m-1">
         Sort
       </label>

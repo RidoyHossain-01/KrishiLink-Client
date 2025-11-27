@@ -70,7 +70,7 @@ createUser(email, password)
       <div className="card w-full max-w-sm shadow-xl bg-base-100">
         <div className="card-body">
            <img className='w-64 mx-auto' src="https://i.ibb.co.com/q3pMjf0N/Gemini-Generated-Image-t8my2zt8my2zt8my.png" alt="" />
-          <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
+          <h2 className="text-2xl font-bold text-center mb-4 text-green-700">Register</h2>
 
           <form onSubmit={handleRegister}>
             {/* Name */}
@@ -145,13 +145,13 @@ createUser(email, password)
             {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
 
             {/* Register Button */}
-            <button type="submit" className="btn btn-primary w-full mt-2">
+            <button type="submit" className="btn bg-purple-500 text-white text-lg w-full mt-2 ">
               Register
             </button>
           </form>
           <p className="text-center text-sm mt-3">
             Already have an account?{" "}
-            <Link to={"/login"} className="text-primary font-semibold">
+            <Link to={"/login"} className="text-green-700 font-semibold">
               Log in
             </Link>
           </p>

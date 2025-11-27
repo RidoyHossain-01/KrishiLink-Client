@@ -26,7 +26,7 @@ const Testimonials = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-5xl font-bold text-primary mb-6">What Our Farmers Say</h2>
+        <h2 className="text-5xl font-bold text-green-700 mb-6">What Our Farmers Say</h2>
         <p className="text-gray-600 mb-12">
           Hear directly from our farmers who have benefited from KrishiLink.
         </p>
@@ -40,7 +40,7 @@ const Testimonials = () => {
                 alt={testimonial.name}
               />
               <p className="text-gray-700 mb-4">"{testimonial.feedback}"</p>
-              <h3 className="text-lg font-semibold text-gray-800">{testimonial.name}</h3>
+              <h3 className="text-lg font-semibold text-green-700">{testimonial.name}</h3>
               <p className="text-gray-500 text-sm">{testimonial.role}</p>
             </div>
           ))}

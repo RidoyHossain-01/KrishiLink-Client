@@ -190,7 +190,7 @@ const CropDetails = () => {
 
         {/* Content Section */}
         <div className="p-6 md:p-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
+          <h1 className="text-3xl md:text-4xl font-bold text-green-700">
             {name}
           </h1>
 
@@ -201,7 +201,7 @@ const CropDetails = () => {
 
             <div className="p-4 bg-base-200 rounded-lg shadow-sm">
               <p className="text-sm text-gray-500">Price per Unit</p>
-              <p className="text-xl font-semibold text-primary">
+              <p className="text-xl font-semibold text-orange-500">
                 {pricePerUnit}৳ / {unit}
               </p>
             </div>
@@ -349,7 +349,7 @@ const CropDetails = () => {
         <div className="flex justify-center">
           <button
             onClick={handleInterestModalOpen}
-            className="btn btn-primary flex w-full"
+            className="btn bg-purple-500 text-white text-lg flex w-full"
           >
             Interest request
           </button>

@@ -27,7 +27,7 @@ const MyPosts = () => {
                {
                     !myposts.length?(<div className='flex flex-col justify-center min-h-svh items-center'>
                          <img className='w-52' src="https://i.ibb.co.com/q3pMjf0N/Gemini-Generated-Image-t8my2zt8my2zt8my.png" alt="" />
-                    <p className=' font-bold text-4xl'>No posts available</p><Link className='btn btn-primary text-base my-10' to={"/add-crops"}>Add your First Crop</Link>
+                    <p className=' font-bold text-4xl'>No posts available</p><Link className='btn bg-purple-500 text-base my-10' to={"/add-crops"}>Add your First Crop</Link>
                     </div>):
                     myposts.map(crop=><CropRow key={crop._id} crop={crop}/>)
 

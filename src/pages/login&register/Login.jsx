@@ -77,7 +77,7 @@ const handleGoogleSignIn = () => {
       <div className="card w-full max-w-sm shadow-xl bg-base-100">
         <div className="card-body">
             <img className='w-64 mx-auto' src="https://i.ibb.co.com/q3pMjf0N/Gemini-Generated-Image-t8my2zt8my2zt8my.png" alt="" />
-          <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
+          <h2 className="text-2xl font-bold text-green-700 text-center mb-4 ">Login</h2>
 
           <form onSubmit={handleSignIn}>
             {/* Email */}
@@ -131,7 +131,7 @@ const handleGoogleSignIn = () => {
             </div>
 
             {/* Login Button */}
-            <button type="submit" className="btn btn-primary w-full mt-2">
+            <button type="submit" className="btn text-base bg-purple-500 text-lg w-full mt-2">
               Login
             </button>
           </form>
@@ -154,7 +154,7 @@ const handleGoogleSignIn = () => {
 
           <p className="text-center text-sm mt-3">
             Don't have an account?{" "}
-            <Link to={"/register"} className="text-primary font-semibold">
+            <Link to={"/register"} className=" text-green-700 font-semibold">
               Sign Up
             </Link>
           </p>

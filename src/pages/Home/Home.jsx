@@ -33,7 +33,7 @@ const Home = () => {
       </div>
 
         <section className="mx-auto ">
-          <h1 className="text-center font-bold text-5xl mt-32 mb-5">Explore our latest <br /> <span className="text-primary">
+          <h1 className="text-center text-green-700 font-bold text-5xl mt-32 mb-5">Explore our latest <br /> <span className="text-orange-500">
             Products
             </span> </h1>
         <p className="text-center text-xl mb-14">Explore all the fresh products we have to offer, fresh from the farm to your doorsteps</p>
@@ -47,35 +47,35 @@ const Home = () => {
       }
     </div>
 
-      <Link className="btn btn-primary flex my-16" to={'/all-crops'}>View all Crops</Link>
+      <Link className="btn bg-green-600 text-white flex my-16" to={'/all-crops'}>View all Crops</Link>
         </section>
 
-        <section className="mx-auto">
+        <section className="mx-auto bg-gray-50">
           <div className="py-12 bg-base-100">
-  <h2 className="text-5xl font-bold text-center mb-10 text-primary">How It Works</h2>
+  <h2 className="text-5xl font-bold text-center mb-10 text-green-700">How It Works</h2>
 
-  <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+  <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto px-4 ">
     <div className="card bg-base-200 p-6 text-center shadow-lg">
-      <span className="text-5xl text-accent mx-auto"><MdPostAdd /></span>
-      <h3 className="text-xl font-semibold text-primary">1. Post Your Crop</h3>
+      <span className="text-5xl text-orange-500 mx-auto"><MdPostAdd /></span>
+      <h3 className="text-xl font-semibold text-green-700">1. Post Your Crop</h3>
       <p className="mt-2">Upload crop details and reach thousands of buyers.</p>
     </div>
 
     <div className="card bg-base-200 p-6 text-center shadow-lg">
-      <span className="text-5xl text-accent mx-auto"><GiBuyCard /></span>
-      <h3 className="text-xl font-semibold text-primary">2. Get Buyer Interests</h3>
+      <span className="text-5xl text-orange-500 mx-auto"><GiBuyCard /></span>
+      <h3 className="text-xl font-semibold text-green-700">2. Get Buyer Interests</h3>
       <p className="mt-2">Buyers send offers with their desired quantity.</p>
     </div>
 
     <div className="card bg-base-200 p-6 text-center shadow-lg">
-      <span className="text-5xl text-accent mx-auto"><IoMdChatbubbles /></span>
-      <h3 className="text-xl font-semibold text-primary">3. Negotiate</h3>
+      <span className="text-5xl text-orange-500 mx-auto"><IoMdChatbubbles /></span>
+      <h3 className="text-xl font-semibold text-green-700">3. Negotiate</h3>
       <p className="mt-2">Review offers, accept, decline, or negotiate easily.</p>
     </div>
 
     <div className="card bg-base-200 p-6 text-center shadow-lg">
-      <span className="text-5xl text-accent mx-auto"><CiDeliveryTruck /></span>
-      <h3 className="text-xl font-semibold text-primary">4. Complete the Deal</h3>
+      <span className="text-5xl text-orange-500 mx-auto"><CiDeliveryTruck /></span>
+      <h3 className="text-xl font-semibold text-green-700">4. Complete the Deal</h3>
       <p className="mt-2">Finalize the trade and deliver the crop.</p>
     </div>
   </div>
@@ -87,7 +87,7 @@ const Home = () => {
         {/* agro blog */}
         <section>
             <div className="py-12 bg-base-100">
-  <h2 className="text-5xl font-bold text-center mb-10 text-primary">Latest Agro News</h2>
+  <h2 className="text-5xl font-bold text-center mb-10 text-green-700">Latest Agro News</h2>
 
   <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
     
@@ -96,9 +96,9 @@ const Home = () => {
         <img className="h-52" src="https://i.ibb.co.com/pjbydV4F/winter-crops.jpg" alt="Agro News"/>
       </figure>
       <div className="card-body">
-        <h3 className="card-title text-primary">Best Winter Crops to Grow</h3>
+        <h3 className="card-title text-green-700">Best Winter Crops to Grow</h3>
         <p>Learn which crops can give the highest profit this season.</p>
-        <button className="btn btn-primary btn-sm mt-3">Read More</button>
+        <button className="btn bg-purple-500 text-white btn-sm mt-3">Read More</button>
       </div>
     </div>
 
@@ -107,9 +107,9 @@ const Home = () => {
         <img className="h-52" src="https://i.ibb.co.com/Q7nKGVjQ/Modern-Farming-Techniques-Boosting-Productivity-with-Innovation-2-scaled.jpg" alt="Tech News"/>
       </figure>
       <div className="card-body">
-        <h3 className="card-title text-primary">Modern Farming Techniques</h3>
+        <h3 className="card-title text-green-700">Modern Farming Techniques</h3>
         <p>Discover smart ways to boost your farm productivity.</p>
-        <button className="btn btn-primary btn-sm mt-3">Read More</button>
+        <button className="btn bg-purple-500 text-white btn-sm mt-3">Read More</button>
       </div>
     </div>
 
@@ -118,9 +118,9 @@ const Home = () => {
         <img className="h-52" src="https://i.ibb.co.com/hFKKxrKx/farm-fresh-vegetables-market-organic-natural-healthy-food-creative-price-list-design-concept-agricul.webp" alt="Market"/>
       </figure>
       <div className="card-body">
-        <h3 className="card-title text-primary">Market Price Updates</h3>
+        <h3 className="card-title text-green-700">Market Price Updates</h3>
         <p>Stay updated with the latest prices of essential crops.</p>
-        <button className="btn btn-primary btn-sm mt-3">Read More</button>
+        <button className="btn bg-purple-500 text-white btn-sm mt-3">Read More</button>
       </div>
     </div>
 
@@ -134,7 +134,7 @@ const Home = () => {
         </section>
 
         <section className="my-15">
-          <h1 className="text-5xl font-bold text-primary text-center my-5">Frequently Asked Questions</h1>
+          <h1 className="text-5xl font-bold text-green-700 text-center my-5">Frequently Asked <span className="text-purple-500">Questions</span></h1>
           <div className="collapse collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" defaultChecked />
   <div className="collapse-title font-semibold">How do I create an account?</div>
