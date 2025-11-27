@@ -38,7 +38,7 @@ const HeroSlider = () => {
 
       {/* Optionally overlay text */}
       <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 text-center text-white px-4">
-        <h1 className="text-5xl md:text-8xl  font-bold drop-shadow-lg  ">Welcome to KrishiLink</h1>
+        <h1 className="text-5xl md:text-6xl lg:text-8xl  font-bold drop-shadow-lg  ">Welcome to KrishiLink</h1>
         <p className="mt-2 text-xl md:text-3xl drop-shadow-md">Connecting farmers and buyers...</p>
       </div>
     </div>

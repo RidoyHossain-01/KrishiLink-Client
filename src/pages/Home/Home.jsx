@@ -8,6 +8,7 @@ import { MdPostAdd } from "react-icons/md";
 import { GiBuyCard } from "react-icons/gi";
 import { IoMdChatbubbles } from "react-icons/io";
 import { CiDeliveryTruck } from "react-icons/ci";
+import Testimonials from "../../components/Testimonials";
 
 const Home = () => {
   const [latest,setLatest]=useState(null)
@@ -128,10 +129,12 @@ const Home = () => {
         </section>
 
 
-        
+        <section>
+          <Testimonials/>
+        </section>
 
         <section className="my-15">
-          <h1 className="text-4xl font-bold text-primary text-center">Frequently Asked Questions</h1>
+          <h1 className="text-5xl font-bold text-primary text-center my-5">Frequently Asked Questions</h1>
           <div className="collapse collapse-arrow bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-2" defaultChecked />
   <div className="collapse-title font-semibold">How do I create an account?</div>

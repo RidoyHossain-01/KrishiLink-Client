@@ -66,9 +66,10 @@ createUser(email, password)
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-200 px-4">
+    <div className=" flex items-center justify-center bg-base-200 px-4">
       <div className="card w-full max-w-sm shadow-xl bg-base-100">
         <div className="card-body">
+           <img className='w-64 mx-auto' src="https://i.ibb.co.com/q3pMjf0N/Gemini-Generated-Image-t8my2zt8my2zt8my.png" alt="" />
           <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
 
           <form onSubmit={handleRegister}>

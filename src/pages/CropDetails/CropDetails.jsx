@@ -5,6 +5,7 @@ import AuthContext from "../../context/AuthContext";
 
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import ErrorElement from "../../components/ErrorElement";
 
 const CropDetails = () => {
   const { id } = useParams();
@@ -44,7 +45,7 @@ const CropDetails = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const totalPrice = quantity * pricePerUnit;
+  const totalPrice = quantity2 * pricePerUnit;
 
   const interestModalRef = useRef(null);
   const handleInterestModalOpen = () => {
@@ -61,19 +62,19 @@ const CropDetails = () => {
     e.preventDefault();
     setError("");
 
-    if (quantity > cropDetails.quantity) {
+    if (quantity2 >quantity) {
       setError("Quantity exceeds available stock");
       return;
     }
 
-    if (quantity < 1) {
+    if (quantity2 < 1) {
       setError("Quantity must be at least 1");
       return;
     }
     const newInterest = {
       userEmail: user?.email,
       userName: user?.displayName,
-      quantity,
+      quantity:quantity2,
       message,
       totalPrice,
     };
@@ -174,9 +175,8 @@ const CropDetails = () => {
 
   return (
   <div>
-
-    {/* crop details page */}
-    <div className="min-h-screen bg-base-100 flex items-center justify-center p-4">
+    {
+      cropDetails.name && <div className="min-h-screen bg-base-100 flex items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
 
         {/* Image */}
@@ -241,6 +241,20 @@ const CropDetails = () => {
         </div>
       </div>
     </div>
+    }
+
+   
+    
+{
+  !cropDetails.name && <ErrorElement/>
+}
+
+
+
+
+
+
+
 
     {/* this one is for the owner */}
     {checkOwner && (
@@ -327,8 +341,10 @@ const CropDetails = () => {
       </>
     )}
 
+
+
     {/* this one is for the non Owners */}
-    {!checkOwner && (
+    {!checkOwner && cropDetails.name && (
       <>
         <div className="flex justify-center">
           <button

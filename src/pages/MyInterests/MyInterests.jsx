@@ -5,21 +5,80 @@ import AuthContext from "../../context/AuthContext";
 
 const MyInterests = () => {
   const [myInterests, setMyInterests] = useState([]);
+  const [sort,setSort]= useState('newest')
   const {user} = use(AuthContext)
 
   useEffect(() => {
-    axios(`http://localhost:3000/my-interests?email=${user.email}`).then((res) => {
+  if (!user?.email) return;
+
+  if (sort === "newest") {
+    axios(`http://localhost:3000/my-interests/newest?email=${user.email}`).then((res) => {
       setMyInterests(res.data);
     });
-  }, []);
+  } else if (sort === "oldest") {
+    axios(`http://localhost:3000/my-interests/oldest?email=${user.email}`).then((res) => {
+      setMyInterests(res.data);
+    });
+  } else if (sort === "priceLow") {
+    axios(`http://localhost:3000/my-interests/price-low-to-high?email=${user.email}`).then((res) => {
+      setMyInterests(res.data);
+    });
+  } else if (sort === "priceHigh") {
+    axios(`http://localhost:3000/my-interests/price-high-to-low?email=${user.email}`).then((res) => {
+      setMyInterests(res.data);
+    });
+  }
+}, [sort, user?.email]);
+
  
   return (
     <div>
       {!myInterests.length ? (
         <p>No interests here</p>
       ) : 
-      
-            <div className="overflow-x-auto ">
+      <div>
+
+
+        <div>
+          <h1 className="text-4xl text-center font-bold text-primary">My Interests</h1>
+        </div>
+
+      {/* sorting  */}
+
+       <div className="dropdown dropdown-end">
+      <label tabIndex={0} className="btn m-1">
+        Sort
+      </label>
+      <ul
+        tabIndex={0}
+        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+      >
+        <li>
+          <button onClick={() => setSort("priceHigh")}>
+            Price: High to Low
+          </button>
+        </li>
+        <li>
+          <button onClick={() => setSort("priceLow")}>
+            Price: Low to High
+          </button>
+        </li>
+        <li>
+          <button onClick={() => setSort("newest")}>Newest</button>
+        </li>
+        <li>
+          <button onClick={() => setSort("oldest")}>Oldest</button>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+{/* interest table */}
+
+
+               <div className="overflow-x-auto ">
   <table className="table ">
     {/* head */}
     <thead>
@@ -74,6 +133,8 @@ const MyInterests = () => {
    
   </table>
 </div>
+        </div>
+     
      }
     </div>
   );
