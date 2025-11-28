@@ -67,15 +67,21 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <Link to={'/'} className="  font-bold text-3xl text-white">KrishiLink</Link>
+          <Link to={"/"} className="  font-bold text-3xl text-white">
+            KrishiLink
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="flex items-center gap-5 px-1 text-base text-lg">{links}</ul>
+          <ul className="flex items-center gap-5 px-1 text-base text-lg">
+            {links}
+          </ul>
         </div>
         <div className="navbar-end">
           {!user ? (
             <button className="btn btn-sm my-1 bg-orange-500  outline-0 ">
-              <Link className='text-white' to="/login">Log in</Link>
+              <Link className="text-white" to="/login">
+                Log in
+              </Link>
             </button>
           ) : (
             <button

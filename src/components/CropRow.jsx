@@ -54,7 +54,7 @@ const CropRow = ({ crop }) => {
 
     Swal.fire({
       title: "Confirm Edit?",
-     //  text: "You won't be able to revert this!",
+      //  text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -64,51 +64,42 @@ const CropRow = ({ crop }) => {
       if (result.isConfirmed) {
         axios
           .patch(`http://localhost:3000/crops/${crop._id}`, updatedCrop)
-          .then((res) => {
-            console.log(res);
+          .then(() => {
+            // console.log(res);
             setCropData(updatedCrop);
             navigate(0);
-              Swal.fire({
-          title: "Updated",
-          text: "Your Crop has been updated",
-          icon: "success",
-        });
+            Swal.fire({
+              title: "Updated",
+              text: "Your Crop has been updated",
+              icon: "success",
+            });
           });
-
-      
       }
     });
-
   };
-  const handleCropDelete = ()=>{
-     Swal.fire({
-  title: "Are you sure?",
-  text: "You won't be able to revert this!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-     axios.delete(`http://localhost:3000/crops/${crop._id}`)
-     .then(res=>{
-          console.log(res);
-          navigate(0);
-           Swal.fire({
-      title: "Deleted!",
-      text: "Your Crop has been deleted.",
-      icon: "success"
-    });
-     })
+  const handleCropDelete = () => {
     Swal.fire({
-      title: "Deleted!",
-      text: "Your Crop has been deleted.",
-      icon: "success"
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`http://localhost:3000/crops/${crop._id}`).then(() => {
+          // console.log(res);
+          navigate(0);
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your Crop has been deleted.",
+            icon: "success",
+          });
+        });
+      }
     });
-  }
-});
-  }
+  };
   return (
     <div>
       <div className="w-full bg-base-100 rounded-xl shadow-md p-4 mb-4 flex flex-col sm:flex-row items-center gap-4">
@@ -140,7 +131,12 @@ const CropRow = ({ crop }) => {
             Edit
           </button>
 
-          <button onClick={handleCropDelete} className="btn btn-sm bg-red-500 text-base">Delete</button>
+          <button
+            onClick={handleCropDelete}
+            className="btn btn-sm bg-red-500 text-base"
+          >
+            Delete
+          </button>
         </div>
       </div>
 

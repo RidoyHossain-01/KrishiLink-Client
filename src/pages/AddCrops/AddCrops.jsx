@@ -41,7 +41,7 @@ useEffect(()=>{
     };
      axios.post('http://localhost:3000/crops',newCrop)
      .then(res=>{
-          console.log(res.data);
+          // console.log(res.data);
           if(res.data.acknowledged){
                toast.success('Crop added successfully')
                form.reset()
@@ -58,7 +58,7 @@ useEffect(()=>{
   return (
     <div className="min-h-screen md:min-h-56 bg-base-200 flex justify-center py-10 px-4">
       <div className="w-full max-w-2xl card bg-base-100 shadow-xl p-6">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+        <h2 className="text-3xl font-bold mb-6 text-center text-purple-500">
           Create New Crop Post
         </h2>
 
@@ -167,7 +167,7 @@ useEffect(()=>{
 
           {/* Submit Button */}
           <div className="md:col-span-2 mt-4">
-            <button type="submit" className="btn btn-primary w-full">
+            <button type="submit" className="btn bg-purple-600 text-white text-lg w-full">
               Submit Post
             </button>
           </div>

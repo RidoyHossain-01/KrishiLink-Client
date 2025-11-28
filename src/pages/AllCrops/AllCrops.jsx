@@ -12,7 +12,7 @@ const AllCrops = () => {
     
       axios.get("http://localhost:3000/all-crops")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
             setCrops(res.data)
       })
       .catch((err) => {

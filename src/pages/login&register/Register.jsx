@@ -30,47 +30,50 @@ const Register = () => {
       return;
     }
 
-   
-// toast, navigate available in your component
+    // toast, navigate available in your component
 
-createUser(email, password)
-  .then((userCredential) => {
-    // userCredential contains the created user
-    const user = userCredential.user;
+    createUser(email, password)
+      .then((userCredential) => {
+        // userCredential contains the created user
+        const user = userCredential.user;
 
-    // updateUser returns a Promise (usually resolves to void)
-    // return it so the chain waits for it
-    return updateUser({ displayName: name, photoURL: image })
-      .then(() => user); // pass `user` forward to next .then
-  })
-  .then((user) => {
-    // Now user is available here (from createUser)
-    // Save user to your backend (optional)
-    return axios.post("http://localhost:3000/users", {
-      email: user.email,
-      name: name,
-      photoURL: image,
-    });
-  })
-  .then(() => {
-    
-     
-    toast.success("Registration successful!");
-    navigate("/");
-  })
-  .catch((err) => {
-    // catches createUser, updateUser or axios errors
-    setError(err?.message || err?.code || "Registration failed");
-  });
-
+        // updateUser returns a Promise (usually resolves to void)
+        // return it so the chain waits for it
+        return updateUser({ displayName: name, photoURL: image }).then(
+          () => user
+        ); // pass `user` forward to next .then
+      })
+      .then((user) => {
+        // Now user is available here (from createUser)
+        // Save user to your backend (optional)
+        return axios.post("http://localhost:3000/users", {
+          email: user.email,
+          name: name,
+          photoURL: image,
+        });
+      })
+      .then(() => {
+        toast.success("Registration successful!");
+        navigate("/");
+      })
+      .catch((err) => {
+        // catches createUser, updateUser or axios errors
+        setError(err?.message || err?.code || "Registration failed");
+      });
   };
 
   return (
     <div className=" flex items-center justify-center bg-base-200 px-4">
       <div className="card w-full max-w-sm shadow-xl bg-base-100">
         <div className="card-body">
-           <img className='w-64 mx-auto' src="https://i.ibb.co.com/q3pMjf0N/Gemini-Generated-Image-t8my2zt8my2zt8my.png" alt="" />
-          <h2 className="text-2xl font-bold text-center mb-4 text-green-700">Register</h2>
+          <img
+            className="w-64 mx-auto"
+            src="https://i.ibb.co.com/q3pMjf0N/Gemini-Generated-Image-t8my2zt8my2zt8my.png"
+            alt=""
+          />
+          <h2 className="text-2xl font-bold text-center mb-4 text-green-700">
+            Register
+          </h2>
 
           <form onSubmit={handleRegister}>
             {/* Name */}
@@ -145,7 +148,10 @@ createUser(email, password)
             {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
 
             {/* Register Button */}
-            <button type="submit" className="btn bg-purple-500 text-white text-lg w-full mt-2 ">
+            <button
+              type="submit"
+              className="btn bg-purple-500 text-white text-lg w-full mt-2 "
+            >
               Register
             </button>
           </form>

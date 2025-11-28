@@ -14,17 +14,18 @@ import Register from "./../pages/login&register/Register";
 import PrivateRoute2 from "../layouts/PrivateRoute2";
 import PrivateRoute from "../layouts/PrivateRoute";
 import ErrorElement from "../components/ErrorElement";
+import Loader from "../components/Loader";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
-     errorElement:<ErrorElement/>,
+    errorElement: <ErrorElement />,
     children: [
       {
         path: "/",
         element: (
-          <Suspense fallback={<p>loading from route...</p>}>
+          <Suspense fallback={<Loader />}>
             <Home />
           </Suspense>
         ),
@@ -32,7 +33,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-crops",
         element: (
-          <Suspense fallback={<p>loading from route...</p>}>
+          <Suspense fallback={<Loader />}>
             <AllCrops />
           </Suspense>
         ),
@@ -41,7 +42,7 @@ export const router = createBrowserRouter([
         path: "/all-crops/:id",
         element: (
           <PrivateRoute>
-            <Suspense fallback={<p>loading from route...</p>}>
+            <Suspense fallback={<Loader />}>
               <CropDetails />
             </Suspense>
           </PrivateRoute>

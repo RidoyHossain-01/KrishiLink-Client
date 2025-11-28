@@ -2,29 +2,30 @@ import React, { use, useEffect, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 import { Link } from "react-router";
 import axios from "axios";
-
+import Loader from "../../components/Loader";
 
 const MyProfile = () => {
-
-  const [length,setLength] = useState(0)
+  const [length, setLength] = useState(0);
+  const [loading, setLoading] = useState(true);
   // console.log(length);
-  
-  const {user} = use (AuthContext)
-  // console.log(user);
-   useEffect(()=>{
-          axios(`http://localhost:3000/all-crops?email=${user?.email}`)
-          .then(res=>{
-              
-             setLength(res.data.length)
-              
-               
-          })
-     },[user.email])
 
-    //  console.log(user);
-     
-  
-  
+  const { user } = use(AuthContext);
+  // console.log(user);
+  useEffect(() => {
+    axios(`http://localhost:3000/all-crops?email=${user?.email}`).then(
+      (res) => {
+        setLoading(false);
+        setLength(res.data.length);
+      }
+    );
+  }, [user.email]);
+
+  //  console.log(user);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className="min-h-screen bg-green-50 p-4 flex justify-center">
       <div className="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-6 border border-green-200">
@@ -72,7 +73,10 @@ const MyProfile = () => {
 
         {/* Buttons */}
         <div className="mt-8 flex flex-col md:flex-row gap-3 justify-center">
-          <Link to={'/my-posts'} className="btn btn-success btn-lg text-white w-full md:w-1/2">
+          <Link
+            to={"/my-posts"}
+            className="btn btn-success btn-lg text-white w-full md:w-1/2"
+          >
             View Posted Crops
           </Link>
 
@@ -85,9 +89,9 @@ const MyProfile = () => {
         <div className="mt-10 bg-green-100 p-5 rounded-xl shadow-sm">
           <h2 className="text-xl font-semibold text-green-700">About Me</h2>
           <p className="text-gray-700 mt-2 leading-relaxed">
-            Hello! I'm {user.displayName}, a passionate farmer and seller on KrishiLink. I
-            aim to connect buyers with the freshest, best-quality crops grown
-            locally.
+            Hello! I'm {user.displayName}, a passionate farmer and seller on
+            KrishiLink. I aim to connect buyers with the freshest, best-quality
+            crops grown locally.
           </p>
         </div>
       </div>
