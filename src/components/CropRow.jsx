@@ -63,7 +63,10 @@ const CropRow = ({ crop }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .patch(`http://localhost:3000/crops/${crop._id}`, updatedCrop)
+          .patch(
+            `https://krishi-link-server-omega.vercel.app/crops/${crop._id}`,
+            updatedCrop
+          )
           .then(() => {
             // console.log(res);
             setCropData(updatedCrop);
@@ -88,15 +91,19 @@ const CropRow = ({ crop }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/crops/${crop._id}`).then(() => {
-          // console.log(res);
-          navigate(0);
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your Crop has been deleted.",
-            icon: "success",
+        axios
+          .delete(
+            `https://krishi-link-server-omega.vercel.app/crops/${crop._id}`
+          )
+          .then(() => {
+            // console.log(res);
+            navigate(0);
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your Crop has been deleted.",
+              icon: "success",
+            });
           });
-        });
       }
     });
   };

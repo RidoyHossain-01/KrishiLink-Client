@@ -20,7 +20,7 @@ const Login = () => {
       //      console.log(result);
 
       .then((result) => {
-        axios.post("http://localhost:3000/users", {
+        axios.post("https://krishi-link-server-omega.vercel.app/users", {
           email: result.user.email,
           name: result.user.displayName,
           photoURL: result.user.photoURL,

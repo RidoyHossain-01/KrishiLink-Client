@@ -46,7 +46,7 @@ const Register = () => {
       .then((user) => {
         // Now user is available here (from createUser)
         // Save user to your backend (optional)
-        return axios.post("http://localhost:3000/users", {
+        return axios.post("https://krishi-link-server-omega.vercel.app/users", {
           email: user.email,
           name: name,
           photoURL: image,

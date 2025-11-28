@@ -36,18 +36,20 @@ const CropDetails = () => {
   } = cropDetails;
 
   useEffect(() => {
-    axios(`http://localhost:3000/crops/${id}`).then((res) => {
-      setCropDetails(res.data);
-      const checkOwnerEmail = res.data.owner.ownerEmail;
-      const myEmail = user?.email;
-      const cropInterests = res.data.interests;
-      setInterests(cropInterests);
-      if (myEmail === checkOwnerEmail) {
-        setCheckOwner(true);
-      } else {
-        setCheckOwner(false);
+    axios(`https://krishi-link-server-omega.vercel.app/crops/${id}`).then(
+      (res) => {
+        setCropDetails(res.data);
+        const checkOwnerEmail = res.data.owner.ownerEmail;
+        const myEmail = user?.email;
+        const cropInterests = res.data.interests;
+        setInterests(cropInterests);
+        if (myEmail === checkOwnerEmail) {
+          setCheckOwner(true);
+        } else {
+          setCheckOwner(false);
+        }
       }
-    });
+    );
   }, [id, user?.email]);
 
   const [quantity2, setQuantity2] = useState(1);
@@ -84,7 +86,10 @@ const CropDetails = () => {
     };
     try {
       axios
-        .post(`http://localhost:3000/crops/${id}/interests`, newInterest)
+        .post(
+          `https://krishi-link-server-omega.vercel.app/crops/${id}/interests`,
+          newInterest
+        )
         .then((res) => {
           // console.log(res);
 
@@ -118,7 +123,7 @@ const CropDetails = () => {
         try {
           axios
             .patch(
-              `http://localhost:3000/corps/${id}/interest/${interestId}`,
+              `https://krishi-link-server-omega.vercel.app/corps/${id}/interest/${interestId}`,
               accept
             )
             .then(() => {
@@ -154,7 +159,7 @@ const CropDetails = () => {
         try {
           axios
             .patch(
-              `http://localhost:3000/corps/${id}/interest/${interestId}`,
+              `https://krishi-link-server-omega.vercel.app/corps/${id}/interest/${interestId}`,
               reject
             )
             .then(() => {

@@ -15,28 +15,28 @@ const MyInterests = () => {
 
     if (sort === "newest") {
       axios(
-        `http://localhost:3000/my-interests/newest?email=${user.email}`
+        `https://krishi-link-server-omega.vercel.app/my-interests/newest?email=${user.email}`
       ).then((res) => {
         setLoading(false);
         setMyInterests(res.data);
       });
     } else if (sort === "oldest") {
       axios(
-        `http://localhost:3000/my-interests/oldest?email=${user.email}`
+        `https://krishi-link-server-omega.vercel.app/my-interests/oldest?email=${user.email}`
       ).then((res) => {
         setLoading(false);
         setMyInterests(res.data);
       });
     } else if (sort === "priceLow") {
       axios(
-        `http://localhost:3000/my-interests/price-low-to-high?email=${user.email}`
+        `https://krishi-link-server-omega.vercel.app/my-interests/price-low-to-high?email=${user.email}`
       ).then((res) => {
         setLoading(false);
         setMyInterests(res.data);
       });
     } else if (sort === "priceHigh") {
       axios(
-        `http://localhost:3000/my-interests/price-high-to-low?email=${user.email}`
+        `https://krishi-link-server-omega.vercel.app/my-interests/price-high-to-low?email=${user.email}`
       ).then((res) => {
         setLoading(false);
         setMyInterests(res.data);

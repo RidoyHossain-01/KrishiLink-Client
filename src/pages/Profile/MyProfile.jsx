@@ -12,12 +12,12 @@ const MyProfile = () => {
   const { user } = use(AuthContext);
   // console.log(user);
   useEffect(() => {
-    axios(`http://localhost:3000/all-crops?email=${user?.email}`).then(
-      (res) => {
-        setLoading(false);
-        setLength(res.data.length);
-      }
-    );
+    axios(
+      `https://krishi-link-server-omega.vercel.app/all-crops?email=${user?.email}`
+    ).then((res) => {
+      setLoading(false);
+      setLength(res.data.length);
+    });
   }, [user.email]);
 
   //  console.log(user);

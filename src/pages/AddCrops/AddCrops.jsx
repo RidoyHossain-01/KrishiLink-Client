@@ -5,19 +5,19 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
 
 const AddCrops = () => {
-const {user} = use(AuthContext)
-const [dbUserData,setDbUserData]=useState(null)
-const navigate = useNavigate();
-// console.log(dbUserData);
+  const { user } = use(AuthContext);
+  const [dbUserData, setDbUserData] = useState(null);
+  const navigate = useNavigate();
+  // console.log(dbUserData);
 
-// console.log(user);
-useEffect(()=>{
-     axios(`http://localhost:3000/users?email=${user.email}`)
-     .then(res=>{
-          setDbUserData(res.data)
-          
-     })
-},[user])
+  // console.log(user);
+  useEffect(() => {
+    axios(
+      `https://krishi-link-server-omega.vercel.app/users?email=${user.email}`
+    ).then((res) => {
+      setDbUserData(res.data);
+    });
+  }, [user]);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,26 +32,27 @@ useEffect(()=>{
       location: form.location.value,
       image: form.image.value,
       createdAt: new Date(),
-      interests:[],
-      owner:{
-          _id:dbUserData?._id,
-           ownerEmail: user?.email,
-            ownerName: user?.displayName,
-      }
+      interests: [],
+      owner: {
+        _id: dbUserData?._id,
+        ownerEmail: user?.email,
+        ownerName: user?.displayName,
+      },
     };
-     axios.post('http://localhost:3000/crops',newCrop)
-     .then(res=>{
-          // console.log(res.data);
-          if(res.data.acknowledged){
-               toast.success('Crop added successfully')
-               form.reset()
-               navigate('/my-posts')  
-          }
-     })
-     .catch(err=>{
-          console.error(err);
-     })
-//     console.log(newCrop);
+    axios
+      .post("https://krishi-link-server-omega.vercel.app/crops", newCrop)
+      .then((res) => {
+        // console.log(res.data);
+        if (res.data.acknowledged) {
+          toast.success("Crop added successfully");
+          form.reset();
+          navigate("/my-posts");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    //     console.log(newCrop);
     // Send newCrop to backend using axios or fetch
   };
 
@@ -167,7 +168,10 @@ useEffect(()=>{
 
           {/* Submit Button */}
           <div className="md:col-span-2 mt-4">
-            <button type="submit" className="btn bg-purple-600 text-white text-lg w-full">
+            <button
+              type="submit"
+              className="btn bg-purple-600 text-white text-lg w-full"
+            >
               Submit Post
             </button>
           </div>

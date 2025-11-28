@@ -15,12 +15,12 @@ const MyPosts = () => {
   // console.log(myposts);
 
   useEffect(() => {
-    axios(`http://localhost:3000/all-crops?email=${user?.email}`).then(
-      (res) => {
-        setLoading(false);
-        setMyposts(res.data);
-      }
-    );
+    axios(
+      `https://krishi-link-server-omega.vercel.app/all-crops?email=${user?.email}`
+    ).then((res) => {
+      setLoading(false);
+      setMyposts(res.data);
+    });
   }, [user.email]);
   if (loading) {
     return <Loader />;

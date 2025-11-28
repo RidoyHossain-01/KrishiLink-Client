@@ -18,7 +18,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000")
+      .get("https://krishi-link-server-omega.vercel.app/homepage")
       .then((res) => {
         setLoading(false);
         setLatest(res.data);
