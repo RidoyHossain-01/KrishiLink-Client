@@ -2,9 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CorpCard from "../../components/CorpCard";
 import { Link, useNavigate } from "react-router";
+import Loader from "../../components/Loader";
 
 const AllCrops = () => {
   const [crops, setCrops] = useState([]);
+  const [loading,setLoading] = useState(true)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,12 +14,17 @@ const AllCrops = () => {
       .get("https://krishi-link-server-omega.vercel.app/all-crops")
       .then((res) => {
         // console.log(res.data);
+
         setCrops(res.data);
+        setLoading(false)
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
+  if (loading) {
+    return <Loader/>
+  }
 
   const handleSearch = (e) => {
     e.preventDefault();
